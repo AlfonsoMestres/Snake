@@ -1,15 +1,20 @@
 #include <iostream>
 #include <string>
-#include  "Renderer.h"
+
+#include "Renderer.h"
+#include  "world.h"
 
 int main() {
 	
-	Renderer render;
+	world world;
+	Renderer rend;
 
 	std::cout << "Welcome to Snake!" << std::endl;
+	world.InitGame();
 
 	while (1) {
-		render.InitGame();
+		rend.PrintField(world.field);
+		world.Tick();
 	}
 
 	system("pause");
